@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edity</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+</head>
+<body>
+  <main class="container disabled">
+    <h2>Edity</h2>
+    <article class="wrapper">
+      <section class="editor">
+        <div class="filter">
+          <label class="title">Filters</label>
+          <div class="options">
+            <button id="brightness" class="active">Brightness</button>
+            <button id="saturation">Saturation</button>
+            <button id="inversion">Inversion</button>
+            <button id="grayscale">Grayscale</button>
+          </div>
+          <div class="slider">
+            <div class="filter-info">
+              <p class="name">Brightness</p>
+              <p class="value">0%</p>
+            </div>
+            <input type="range" min="-100" max="100" value="0" class="slider-input">
+          </div>
+        </div>
+        <div class="rotate">
+          <label class="title">Roteate and flip</label>
+          <div class="options">
+            <button id="rotate-left">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button id="rotate-right">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <button id="flip-horizontal">
+              <i class="bx bx-reflect-vertical"></i>
+            </button>
+            <button id="flip-vertical">
+              <i class="bx bx-reflect-horizontal"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="preview">
+        <img class="preview-image" src="image-placeholder.svg" alt="preview image">
+      </section>
+    </article>
+    <section class="controls">
+      <button class="reset-filters">Reset Filters</button>
+      <div class="row">
+        <input type="file" class="file" accept="image/*" hidden>
+        <button class="choose-image">Choose image</button>
+        <button class="save-image">Save image</button>
+      </div>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>

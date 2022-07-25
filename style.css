@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --background-color: #E3F2FD;
+  --container-color: #FFFFFF;
+  --border-color: #CCCCCC;
+  --options-button-color: #6C757D;
+  --options-button-border-color: #AAAAAA;
+  --options-button-hover-color: #F5F5F5;
+  --button-active-color: #5372F0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  align-items: center;
+  background: var(--background-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  align-items: flex-start;
+  background: var(--container-color);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: flex-start;
+  height: 100%;
+  max-height: 530px;
+  max-width: 850px;
+  padding: 32px 36px 36px;
+  width: 100%;
+}
+
+.container.disabled :where(.editor, .reset-filters, .save-image) {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.container h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.container .wrapper {
+  align-items: flex-start;
+  display: flex;
+  gap: 20px;
+  height: 335px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.wrapper .editor {
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 12px;
+  min-width: 280px;
+  width: 280px;
+}
+
+.editor .filter {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.editor .title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.editor .options, .controls {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.editor button {
+  align-items: center;
+  background: var(--container-color);
+  border: 1px solid var(--options-button-border-color);
+  border-radius: 4px;
+  color: var(--options-button-color);
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  height: 40px;
+  outline: none;
+}
+
+.editor button:hover {
+  background: var(--options-button-hover-color);
+}
+
+.editor .filter button {
+  width: calc(100% / 2 - 4px);
+}
+
+.filter button.active {
+  background: var(--button-active-color);
+  color: var(--container-color);
+  border-color: var(--button-active-color);
+}
+
+.editor .slider {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.editor .slider .filter-info{
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.filter-info .name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.filter-info .value {
+  color: var(--options-button-color);
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.editor .slider input {
+  accent-color: var(--button-active-color);
+  height: 8px;
+  outline: none;
+  padding: 12px 0;
+  width: 100%;
+}
+
+.editor .rotate {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+}
+
+.editor .rotate button {
+  width: calc(100% / 5.5 - 4px);
+}
+
+.editor .rotate button:nth-child(3),
+.editor .rotate button:nth-child(4) {
+  font-size: 16px;
+}
+
+.wrapper .preview {
+  align-items: center;
+  /* border: 1px solid var(--border-color); */
+  border-radius: 4px;
+  display: flex;
+  gap: 4px;
+  height: 100%;
+  justify-content: flex-start;
+  overflow: hidden;
+  width: 100%;
+}
+
+.wrapper .preview img {
+  border-radius: 4px;
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.container .controls {
+  justify-content: space-between;
+}
+
+.controls button {
+  align-items: center;
+  background: var(--container-color);
+  border: 1px solid var(--options-button-border-color);
+  border-radius: 4px;
+  color: var(--options-button-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  justify-content: center;
+  height: 40px;
+  padding: 8px 16px;
+  outline: none;
+}
+
+.controls .reset-filters {
+  border: 1px solid var(--options-button-color);
+  color: var(--options-button-color);
+}
+
+.controls .row {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+.controls .choose-image {
+  background: var(--options-button-color);
+  border: 1px solid var(--options-button-color);
+  color: var(--container-color);
+}
+
+.controls .save-image {
+  background: var(--button-active-color);
+  border: 1px solid var(--button-active-color);
+  color: var(--container-color);
+}
+
+@media (max-width: 850px) {
+  body {
+    align-items: flex-start;
+    background: var(--container-color);
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: 0px;
+    height: 100%;
+    max-height: none;
+    padding: 24px 16px 36px;
+  }
+
+  .container .wrapper {
+    flex-direction: column-reverse;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .wrapper .editor {
+    align-items: flex-start;
+    border: none;
+    padding: 16px 0px;
+    width: 100%;
+  }
+
+  .wrapper .preview {
+    width: 100%;
+  }
+
+  .controls .row {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .controls .row,
+  .controls .reset-filters {
+    width: calc(100% / 2 - 4px);
+  }
+
+  .controls .choose-image,
+  .controls .save-image {
+    width: 100%;
+  }
+}
